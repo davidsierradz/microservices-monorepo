@@ -1,5 +1,6 @@
 FROM node:12.13-alpine
 
+RUN apk update && apk add rsync
 RUN mkdir /srv/service && chown -R node:node /srv/service
 RUN mkdir -p /usr/src/cache && chown -R node:node /usr/src/cache
 

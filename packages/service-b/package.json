@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
   "dependencies": {
     "socket.io-client": "^2.3.0"
   },
-  "scripts": {
-    "start": "npx nodemon src/index.js"
+  "devDependencies": {
+    "nodemon": "^1.19.4"
   }
 }

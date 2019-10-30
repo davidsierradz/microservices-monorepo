@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 
 services:
   service-a:
@@ -6,19 +6,20 @@ services:
       context: ./../../
       dockerfile: ./scripts/docker/service-a.dockerfile
     command: "sh /srv/service/entrypoint.sh"
-    ports:
-      - "3000:3000"
     volumes:
-      -  ./../../packages/service-a:/srv/service
+      - ./../../packages/service-a:/srv/service
   service-b:
     build:
       context: ./../../
       dockerfile: ./scripts/docker/service-b.dockerfile
     command: "sh /srv/service/entrypoint.sh"
-    ports:
-      - "3001:3000"
     volumes:
-      -  ./../../packages/service-b:/srv/service
+      - ./../../packages/service-b:/srv/service
 
   db:
     image: postgres:12.0-alpine
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
